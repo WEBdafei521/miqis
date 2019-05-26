@@ -1,0 +1,661 @@
+   		*{
+    		margin: 0;
+    		padding: 0;
+    		box-sizing: border-box;
+    	}
+    	#container{
+    			overflow: hidden;
+    	}
+    	/*页面顶部下边框阴影*/
+    	#container>.top{
+    		background: #F8F8F8 !important; 
+    		box-shadow:0 1px 10px #999;
+    		position: relative;
+    		z-index: 1;
+    	}
+    	.my_top_color{
+    		color: #c9a16d;
+    		position: relative;
+    	}
+    	.erweima{
+    		width: 115px;
+    		height: 115px;
+    		border: 2px solid #c9a16d;
+    		text-align: center;
+    		line-height: 105px;
+    		border-radius:5px;
+    		position: absolute;
+    		background: white;
+   			left: 60%;
+   			opacity: 0;
+   			transition: 1s;
+    	}
+    	.weishang1:hover .erweima{
+    		opacity: 1;
+    	}
+    	.top span{
+    		font-size: 1.7rem;
+    	}
+    	/*电话咨询响应式*/
+    	@media screen and (max-width: 850px) {
+    		div[class='col-6 text-center text-warning pr-3']{
+    			display: none;
+    		}
+    	}
+    	/*轮播图内边距为0*/
+    	#slid >div:nth-child(1){
+    		padding: 0 !important;
+    		
+    	}
+    	/*轮播图的指向器的样式*/
+    	.carousel-indicators li{
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #c9a16d;
+            border-radius: 50%;
+            margin-left:20px ;
+        }
+        .carousel-indicators .active{
+            background: #c9a16d;
+        }
+    	/*设置导航栏中每一个div的上外边距*/
+    	[class='nav row']>div{
+    		margin-top:10px ;
+    		transition: .7s;
+    	}
+    	#series{
+    		cursor: pointer;
+    	}
+    	/*设置导航栏内部div的背景颜色*/
+    	[class='nav row'] div>div{
+    		width: 100px;
+    		height:100px;
+    		overflow: hidden;
+    		margin: 10px auto;
+    		background: url(../img/nav1.svg) no-repeat scroll 0 0;
+    		background-size:cover;	
+    	}
+    	/*设置导航栏第二个内部div背景图片样式*/
+    	[class='nav row']>div:nth-child(2)>div{
+    		background: url(../img/nav2.svg) no-repeat scroll 0 0;
+    		background-size:cover;
+    	}
+    	/*设置导航栏第三个内部div背景图片样式*/
+    	[class='nav row']>div:nth-child(3)>div{
+    		background: url(../img/nav3.svg) no-repeat scroll 0 0;
+    		background-size:cover;
+    	}
+    	/*设置导航栏第四个内部div背景图片样式*/
+    	[class='nav row']>div:nth-child(4)>div{
+    		background: url(../img/nav4.svg) no-repeat scroll 0 0;
+    		background-size:cover;
+    	}
+    	/*设置导航栏第五个内部div背景图片样式*/
+    	[class='nav row']>div:nth-child(5)>div{
+    		background: url(../img/nav5.svg) no-repeat scroll 0 0;
+    		background-size:cover;
+    	}
+    	/*划入导航栏背景颜色改变*/
+   		[class='nav row']>div:hover{
+   			background: #c9a16d;
+   			border-radius: 3px;
+   		}
+   		/*通过划入导航栏使背景图片转换*/
+   		[class='nav row']>div:nth-child(1):hover div{
+   			background: url(../img/icons.svg) no-repeat scroll 0 0;
+   		}
+   		[class='nav row']>div:nth-child(2):hover div{
+   			background: url(../img/icons2.svg) no-repeat scroll 0 0;
+   		}
+   		[class='nav row']>div:nth-child(3):hover div{
+   			background: url(../img/icons3.svg) no-repeat scroll 0 0;
+   		}
+   		[class='nav row']>div:nth-child(4):hover div{
+   			background: url(../img/icons4.svg) no-repeat scroll 0 0;
+   		}
+   		[class='nav row']>div:nth-child(5):hover div{
+   			background: url(../img/icons5.svg) no-repeat scroll 0 0;
+   		}
+   		/*设置导航栏内部字体颜色和字体边框*/
+   		[class='nav row']>div{
+   			color: #c9a16d;
+   		}
+   		[class='nav row']>div p{
+   			width: 100px;
+   			margin-top: 8px;
+   			display:inline-block;
+   			border-bottom: 1px solid #fff;
+   			border: 1px solid #c9a16d;
+   			border-radius: 20px;
+   			color: #c9a16d;
+   		}
+   		[class='nav row']>div:hover span{
+   			display:inline-block;
+   			border-bottom: 1px solid #fff;
+   			color: #fff;
+   		}
+   		[class='nav row']>div:hover p{
+   			display:inline-block;
+   			border: 1px solid #fff;
+   			border-radius:20px ;
+   			color: #fff;
+   		}
+   		[class='col-12 mt-3']{
+   			font-size:1.5rem ;
+   			color: #cd9e72;
+   		}
+   		[class='col-12 mt-3']>p:nth-child(3){
+   			width: 70px;
+   			margin: 0 auto;
+   			margin-top: -10px;
+   			margin-bottom: 10px;
+   			border-bottom: 3px solid #cd9e72;
+   		}
+   		/*设置三张图片的自适应*/
+   		@media screen and (min-width: 992px) {
+   			.p1,.p2,.p3{
+   				display: inline-block;
+   				width: 33%;
+   			}
+   			#p_three .p1>img,#p_three .p2>img,#p_three .p3>img{
+   				width: 98%;
+   			}
+   		}
+   		@media screen and (min-width: 768px) and (max-width:991px){
+			#series{
+				margin-left:0px;
+			}
+   			.p1,.p2,.p3{
+   				display: inline-block;
+   				margin-bottom: 10px;
+   				width: 90%;
+   			}
+   			#p_three .p1>img,#p_three .p2>img,#p_three .p3>img{
+   				width: 98%;
+   			}
+		}
+		@media screen and (max-width:767px){
+			#series{
+				margin-left:0px;
+			}
+		}
+  		
+   		/*给第一张图片添加过度效果*/
+   		.p1,.p2,.p3{
+   			position: relative;
+   			overflow: hidden;
+   		}
+   		
+		#p_three .p1 img{
+			transition: 5s;
+		}
+		#p_three .p1:hover img{
+			transform: scale(1.5);
+		}
+		.p1_1{
+			position: absolute;
+			width: 100%;
+			height: 100px;
+			color: #fff;
+			top:100%;
+			background: #cd9e72;
+			transition: 1s;
+			line-height: 100px;
+			padding-left:20px ;
+		}
+		#p_three .p1:hover .p1_1{
+			top: 73%;
+		}
+
+		/*给第二张图片添加过度效果*/
+		.p2{
+   			overflow: hidden;
+   		}   		
+		#p_three .p2 img{
+			transition: 5s;
+		}
+		#p_three .p2:hover img{
+			
+			transform: scale(1.5);
+		}
+				
+		.p1_2{
+			position: absolute;
+			width: 100%;
+			height: 100px;
+			top:100%;
+			background: #cd9e72;
+			transition: 1s;
+			line-height: 100px;
+			color: #fff;
+			padding-left:20px ;
+		}
+		#p_three .p2:hover .p1_2{
+			top: 73%;
+		}
+		/*给第三张图片添加过度效果*/
+		.p3{
+   			overflow: hidden;
+   		}
+   		
+		#p_three .p3 img{
+			transition: 5s;
+		}
+		#p_three .p3:hover img{
+			
+			transform: scale(1.5);
+		}
+		.p1_3{
+			position: absolute;
+			width: 100%;
+			color: #fff;
+			height: 100px;
+			top:100%;
+			background: #cd9e72;
+			transition: 1s;
+			line-height: 100px;
+			padding-left:20px ;
+		}
+		#p_three .p3:hover .p1_3{
+			top: 73%;
+		}
+		/*双行两张图*/
+		/*设置一个弹性容器*/
+		.pic_1{
+			display: flex;
+			justify-content: center;
+			flex-wrap: nowrap;
+			margin-top:10px ;
+		}
+		/*设置背景图片，将背景图片平铺、定位*/
+		.bac,.bac1{
+			width: 750px;
+			height: 212px;
+			border: 1px solid transparent;
+			overflow: hidden;
+			background: url(../img/140013eca055d15db91da56473401d42.jpg) no-repeat 0 0;
+			transition: .5s;
+		}
+		.bac1{
+			background: url(../img/278fc871bea887b3ab2a29151b50ef71.jpg) no-repeat 0 0;
+		}
+		.text_1{
+			width: 416px;
+			height: 212px;
+			color:  #cd9e72;
+			position: relative;
+			overflow: hidden;
+		}
+		.text_1>div{
+			width: 416px;
+			height: 212px;
+			background: #feedd3;
+			position: absolute;
+		}
+		.text_1>div:nth-child(2){
+			text-align: center;
+			top: 0;
+			transition: .5s;
+			opacity: 1;
+		}
+		
+		.text_1>div:nth-child(1){
+			text-align: center;
+			left: -416px;
+			transition: .5s;
+			opacity: 0;
+		}
+		.pic_1:hover .text_1>div:nth-child(2){
+			top: -212px;
+			opacity: 0;
+		}
+		.pic_1:hover .text_1>div:nth-child(1){
+			left: 0px;
+			background: red;
+			opacity: 1;
+		}
+		.pic_1:hover .bac{
+			background: url(../img/140013eca055d15db91da56473401d42.jpg) no-repeat 0 -25px ;
+		}
+		.pic_1:hover .bac1{
+			background: url(../img/278fc871bea887b3ab2a29151b50ef71.jpg) no-repeat 0 -25px  ;
+		}
+		[class='row a1']{
+			margin-top: 50px;
+			background:rgba(209,174,130,.8) url(../img/slide2.jpg) no-repeat center center;
+			
+		}
+		[class='col col-12 a1']{
+			width: 100%;
+			height: 257px;
+			background: rgba(209,174,130,.9);
+		}
+		[class='col col-12 a1']>div{
+			width: 530px;
+			height: 196px;
+			color: #cd9e72;
+			background: #feedd3 ;
+			border:2px solid  #ae885d;
+			margin:30px auto;
+			
+		}
+		[class='col col-12 a1']>div>h2{
+			margin-top:30px ;
+			text-align: center;
+		}
+		[class='col col-12 a1']>div>h3{
+			text-align: center;
+		}
+		[class='col col-12 a1']>div>a{
+			display: block;
+			width: 150px;
+			height: 20px;
+			background:  #ae885d;
+			margin: 0 auto;
+			text-align: center; 
+			color: #fff !important;
+			cursor: pointer;
+		}
+		[class='col col-12 a1']>div>a:hover{
+				color: red !important;
+		}
+		/*历史文字样式*/
+		#T1994>div>p{
+				width: 100px;
+				margin-top: 30px;
+				margin-bottom: 7px;
+				border: 3px solid #cd9e72;			
+		}
+		#T1994>div>div>p{
+			color: #000;
+			margin-bottom: 30px;
+		}
+		#T1994>div>div>p>span{
+			display: inline-block;
+			margin-right: 5px;
+			color: #cd9e72;
+			font-size: 1.8rem;
+			font: bold;
+		}
+		/*应用普通流固定一个div用来放图片*/
+		#pic1{
+			width: 1180px;
+			height: 590px;
+			position: relative;
+			margin: 0 auto;
+			box-sizing: border-box;
+		}
+		/*左边布局*/
+		.pic1_left{
+			width: 590px;
+			height: 590px;
+			overflow: hidden;
+		}
+		/*右边半部分的布局*/
+		.pic1_right{
+			position: absolute;
+			top: 0;
+			left: 590px;
+		}
+		.pic1_1{
+			width: 592px;
+			height: 295px;
+			border: 1px solid transparent;
+			overflow: hidden;
+		}
+		.pic1_2{
+			width: 592px;
+			height: 295px;
+			border: 1px solid transparent;
+			overflow: hidden;
+			position: absolute;
+		}
+		
+		/*三角形的样式和鼠标悬停时的效果图*/
+		.sanjiao1{
+			position: absolute;
+			top: 48px;
+			left: 295px;
+			border: 80px solid transparent;
+			border-left: 80px solid  #fff;
+			transition: 4s;
+			z-index: 1;
+		}
+		.sanjiao2{
+			position: absolute;
+			top: 48px;
+			right: 295px;
+			border: 80px solid transparent;
+			border-right: 80px solid  #fff;
+			transition: 4s;
+			z-index: 1;
+		}
+		.pic1_1>div,.pic1_2>div{
+			text-align: center;
+			width: 295px;
+			height: 295px;
+			overflow: hidden;
+			float: left;
+			transition: 4s;
+		}
+		/*第一\二层图片过度效果*/
+		.img2,.img3{
+			width: 295px;height: 295px;
+			overflow: hidden;
+			transition: 4s;
+		}
+		
+		/*右边每一个鼠标悬停效果*/
+		.pic1_1>div:nth-child(1):hover{
+			color: #fff;
+			background: #cd9e72;
+		}
+		.pic1_2>div:nth-child(2):hover{
+			color: #fff;
+			background: #cd9e72;
+		}
+		.pic1_1>div:nth-child(1):hover .sanjiao1{
+			border-left: 80px solid  #cd9e72;
+		}
+		.pic1_2>div:nth-child(2):hover .sanjiao2{
+			border-right: 80px solid  #cd9e72;
+		}
+		.pic1_1 div>p:nth-child(1){
+			color: #cd9e72;
+			margin-top: 65px;
+			font-size: 1.7rem;
+			transition: 4s;
+		}
+		.pic1_2 div>p:nth-child(1){
+			color: #cd9e72;
+			margin-top: 65px;
+			font-size: 1.7rem;
+			transition: 4s;
+		}
+		.pic1_1 div:hover p:nth-child(1){
+			color: white;
+		}
+		.pic1_2 div:hover p:nth-child(1){
+			color: white;
+		}
+		.pic1_1 div>p:nth-child(2){
+			width: 90px;
+			margin: 8px auto;
+			border-bottom: 2px solid #cd9e72;
+			transition: 4s;
+		}
+		.pic1_2 div>p:nth-child(2){
+			width: 90px;
+			margin: 8px auto;
+			border-bottom: 2px solid #cd9e72;
+			transition: 4s;
+		}
+		.pic1_1 div:hover p:nth-child(2){
+			border-bottom: 2px solid #fff;
+		}
+		.pic1_2 div:hover p:nth-child(2){
+			border-bottom: 2px solid #fff;
+		}
+		h6{
+			color: #cd9e72;
+		}
+		.pic1_1:hover h6{
+			color: #fff;
+		}
+		.pic1_2:hover h6{
+			color: #fff;
+		}
+		.pic1_1 div>p:nth-child(3){
+			font-size: 16px;
+			font-weight: 900px;
+		}
+		.pic1_2 div>p:nth-child(3){
+			font-size: 16px;
+			font-weight: 900px;
+		}
+		.pic1_1:hover .img2{
+			transform: scale(1.2);
+		}
+		.pic1_2:hover .img3{
+			transform: scale(1.2);
+		}
+		/*鼠标悬停后，字体颜色、背景颜色、边框颜色*/
+		/*左边大图*/
+		.pic1_left{
+			width: 590px;
+			height: 590px;
+			overflow: hidden;
+		}
+		.pic1_left .img1{
+			transition:4s;
+		}
+		.pic1_left:hover .img1{
+			transform: scale(1.2);
+		}
+		/*享受生活*/
+		.my_color{
+			font-size: 24px;
+			font-weight: 700px;
+			color: #cd9e72;
+		}
+	#list{
+		display: flex;
+		position: relative;
+		width: 150px;
+		height: 35px;
+		border: 1px solid transparent;
+		margin: 40px auto;
+	}
+	.weixin>div{
+		position: absolute;
+		top: -100px;
+		left: -40px;
+		opacity: 0;
+		transition: 1s;
+	}
+	.weibo>div{
+		position: absolute;
+		top: -100px;
+		left:65px;opacity: 0;
+			transition: 1s;
+	}
+	.weixin:hover div{
+		opacity: 1;
+	}.weibo:hover div{
+		opacity: 1;
+	}
+	#tubiao{
+		margin-left:42% ;
+		margin-bottom: 50px;
+	}
+	#footer{
+		color: #e0d7ce;
+		background: #c9a16d;
+		margin: 0;
+	}
+	/*模态框*/
+	/*模态框尺寸*/
+	.modal-content{
+		width: 1000px;
+		height: 600px;
+		margin: 0 -300px;
+		margin-top: 100px;
+		border: 5px dashed #c9a16d;
+	}
+	/*关闭按钮大小*/
+	.modal-header .close{
+		padding: .5rem;
+		margin: -1.5rem -1rem -2rem auto;
+	}
+	/*图片的内、外边距问题*/
+	#modal_body{
+		padding: 0px;
+		padding-left:33px ;
+		margin: 0 auto;
+		
+	}
+	#body_name{
+		border-bottom: 1px dotted #c9a16d;
+	}
+	#body_tur{
+		border-bottom: 1px dotted #c9a16d;
+	}
+	#text-right{
+		display: block;
+		text-align: right;
+		color: #c9a16d;
+	}
+	#foot_name{
+		margin-left: 20px;
+		color: #c9a16d;
+	}
+	#foot_tur{
+		margin-top: 15px;
+		font-size:12px;
+		color: #c9a16d;
+		padding-bottom: 20px;
+		border-bottom: 1px dotted #c9a16d;
+	}
+	#erweima2{
+		width: 162px;
+		height: 180px;
+		border: 2px solid #c9a16d;
+		overflow: hidden;
+		border-radius: 3px;
+		padding: 5px;
+		margin: 30px auto;
+		
+	}
+	#erweima2 p{
+		width: 162px;
+		position: relative;
+		background:#c9a16d ;
+		margin: 0;
+		padding: 0;
+		left:-7px;
+	}
+	#foot_condition,#foot_type,#foot_sweet,#foot_size{
+		margin: 0;
+		padding: 0;
+		font-size: .8rem;
+		color: #c9a16d;
+	}
+	#foot_pic1,#foot_pic2,#foot_pic3{
+		border: 1px solid #c9a16d;
+		border: 2px solid transparent;
+		cursor: pointer;
+	}
+	#foot_pic1:hover,#foot_pic2:hover,#foot_pic3:hover{
+		border: 2px solid #bc9464;
+	}
+	#one,#two,#three,#four,#five{
+		display: none;
+	}
+	/*模态框的三小图片的样式*/
+	#foot_pic_1>img,#foot_pic_2>img,#foot_pic_3>img{
+		cursor: pointer;
+	}
+	#foot_pic_1>img:hover,#foot_pic_2>img:hover,#foot_pic_3>img:hover{
+		border: 1px solid #c9a16d;
+	}

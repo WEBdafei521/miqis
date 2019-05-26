@@ -1,0 +1,28 @@
+{
+  "name": "miqis",
+  "version": "1.0.0",
+  "description": "cake",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WEBdafei521/miqis.git"
+  },
+  "keywords": [
+    "miqi"
+  ],
+  "author": "lipeng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WEBdafei521/miqis/issues"
+  },
+  "homepage": "https://github.com/WEBdafei521/miqis#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.0",
+    "mysql": "^2.17.1"
+  }
+}

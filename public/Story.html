@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	    <link rel="stylesheet" href="css/bootstrap.css"/>
+	    <script src="js/jquery.min.js"></script>
+	    <script src="js/popper.min.js"></script>
+   		<script src="js/bootstrap.min.js"></script>
+   		<style>
+   	.my_color{
+    	color: #c9a16d;
+    }
+    .my_bgcolor{
+    	background: #d2b084;
+    }
+    /*头部背景颜色、边框、边框阴影*/
+    .top_bgcolor{
+    	background: #f8f8f8;
+    }
+    .top{
+    	border: 2px solid transparent;
+		border-bottom-color:#e9ded0;
+		box-shadow: 0px 2px 10px #e9ded0;
+    }
+    	.breadcrumb-item + .breadcrumb-item::before{
+    	content: ">";
+    }
+    h1{
+    	color: #d6d6d6;
+    }
+    .story_size{
+    	color: #666;
+    	font-size: .95rem;
+    }
+    .my_color1{
+		font-size: 24px;
+		font-weight: 700px;
+		color: #cd9e72;
+	}
+	#list{
+		display: flex;
+		position: relative;
+		width: 150px;
+		height: 35px;
+		border: 1px solid transparent;
+		margin: 40px auto;
+	}
+	/*微信二维码*/
+	.weixin>div{
+		position: absolute;
+		top: -100px;
+		left: -40px;
+		opacity: 0;
+		transition: 1s;
+	}
+	.weibo>div{
+		position: absolute;
+		top: -100px;
+		left:65px;opacity: 0;
+			transition: 1s;
+	}
+	.weixin:hover div{
+		opacity: 1;
+	}.weibo:hover div{
+		opacity: 1;
+	}
+	/*图标的位置*/
+	#tubiao{
+		margin-left:42% ;
+		margin-bottom: 50px;
+	}
+	/*页面底部的文字内容*/
+	#footer{
+		color: #e0d7ce;
+		background: #c9a16d;
+	}
+	.my_bgcolor1{
+		background: #c9a16d;
+	}
+	.my_yearcolor{
+		color: #d5ae7b;
+		font-size: 80px;
+	}
+	#process{
+		position: relative;
+	}
+	.process_slide{
+		overflow: hidden;
+		position: relative;
+	}
+	/*历史进程条*/
+	#slide{
+		width:3360px;
+		padding-left:100px;
+		position:relative;
+		left:0px; /*-847px*/
+	}
+	#slide>li{
+		width: 149px;
+		position: relative;
+		top: 300px;
+		float: left;
+		margin-top: 70px;
+		margin-right:30px;
+		text-align: center;
+		border-left:1px solid white;
+	}
+	#li6{
+		top: 2px;
+	}
+	#li5{
+		transform: translateX(30);
+	}
+	#slide>li:nth-child(4),#slide>li:nth-child(8){
+		margin-right: 150px;
+	}
+	#next,#right{
+		position:absolute;
+		top: 100px;
+		z-index: 1;
+	}
+	#right{
+		left: 10px;
+		
+	}#next{
+		right: 10px;
+	}
+	/*品牌荣耀进度条*/
+	.story_kuang{
+		overflow: hidden;
+		position: relative;	
+	}
+	#kuang{
+		left: 0;
+	}
+	.story_year{
+		width: 150%;
+		position: relative;
+		padding-left:5% ;
+		left: 0;
+		background: #fff;
+		padding-left: 50px;
+	}
+	.story_year li{
+		width:100px;
+		height: 305px;
+		float: left;
+		text-align: center;	
+		font-size: 24px;
+	}
+	.nav-pills .nav-link.active,
+	.nav-pills .show > .nav-link {
+  		color: #fff;
+  		background-color:#c9a16d;
+	}
+	.story_year li a{
+		display: block;
+		width: 80px;
+		height: 80px;
+		margin:20px auto ;
+		line-height: 65px;
+		background: #efe2cf;
+		color: #fff;
+	}
+	.story_year li:nth-child(7){
+		margin-right: 70px;
+	}
+	.story_year li:nth-child(even) a{
+		display: block;
+		margin-top:180px ;
+	}
+	/*左右移动*/
+	#honour_left{
+		width: 50px;
+		height: 80px;
+		position: absolute;
+		top: 25%;
+		background: #b8b8b8;
+	}
+	#honour_right{
+		position: relative;
+		top:-210px;
+		left:750px ;
+		width: 50px;
+		height: 80px;
+		background: #b8b8b8;
+	}
+	#image{
+		position: relative;
+	}
+	#lunbo{
+		background:rgba(239,226,207,1);
+		text-align: center;
+		margin-bottom: 0;
+	}
+	/*左右箭头的样式及其位置*/
+	.carousel-control-prev,
+    .carousel-control-next{
+        width: 18%;
+        height: 38%;
+        top: 137px;
+        background: rgba(0,0,0,.3);
+    }
+     /*右边导航栏*/
+	#ul1{
+		width: 100%;
+		height: 40px;
+		margin-top: 0px;margin-bottom:15px ;
+	}
+	#ul2,#ul3,#ul4{
+			width: 100%;
+		height: 40px;
+		margin-top: 15px;margin-bottom:15px ;
+	}
+	#ul1 a,#ul2 a,#ul3 a,#ul4 a{
+		background: #efe2cf;
+		color: #c9a16d;
+	}
+	#ul1 a.active,#ul2 a.active,#ul3 a.active,#ul4 a.active{
+		color: #fff;
+		background: #c9a16d;
+	}
+	
+   	</style>
+	</head>
+	<body onload="">
+		<!--页面的头部-->
+		<div class="row top  top_bgcolor">
+			<div class="col-lg-5 col-sm-12 pt-3 pb-3 text-center">
+				<a href="index.html"><img src="img/logo.png" class="" alt="" /></a>
+			</div>
+			<div class="col-lg-7 col-md-12 text-center">
+				<a href="series.html"><img src="img/nav11 (2).svg" class="pt-3 pb-3 pr-2" width="150px" alt="" /></a>
+				<a href="Story.html"><img src="img/nav2.svg" class="pt-3 pb-3 pr-2" width="150px" alt="" /></a>
+				<a href="public.html"><img src="img/nav33.svg" class="pt-3 pb-3 pr-2" width="150px" alt="" /></a>
+				<a href="service.html"><img src="img/nav44.svg" class="pt-3 pb-3 pr-2" width="150px" alt="" /></a>
+			</div>
+		</div>	
+		<!--中间大图-->
+		<div class="row p-0">
+			<div class="col-sm-12 p-0">
+				<img src="img/banner.jpg" width="100%"/>
+			</div>
+		</div>
+		<!--导航-->
+		<div class="container p-0">
+			<!--文字内容-->
+			<div class="row">
+				<div class="col-lg-6 col-md-12 pt-4 pr-5">
+					<ul class="breadcrumb bg-white">
+						<li class="breadcrumb-item"><a href="#" class="text-dark font-weight-bold">首页</a></li>
+						<li class="breadcrumb-item"><a href="#" class="text-dark font-weight-bold">品牌故事</a></li>
+						<li class="breadcrumb-item"><a href="#" class="text-dark font-weight-bold"`>品牌介绍</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-6 col-md-12 my_color pt-4 h5 pl-5">
+					<p class="mb-2"><i>坚持用心烘焙，臻选优质食材</i></p>
+					<p><i>Enjoy delicious life</i></p>
+				</div>
+			</div>
+			<!--主要内容-->
+			<div class="row">
+				<div class="col-lg-9 col-sm-12 tab-content">
+					<!--品牌介绍-->
+					<div id="introduction" class="tab-pane active" >
+						<h1 class="">SINCE 1994</h1>
+						<p class="my_color h5 pt-3">创造无限，品味生活</p>
+						<div class="story_size font-weight-bold">
+							 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;米旗品牌创建于1994年，是一家以面包、蛋糕、中西点、月饼
+							、粽子、汤圆为主，集研发、生产、销售为一体的全国著名连锁食品企
+							业集团,从1996年开始，米旗先后在西安、哈尔滨、长春、沈阳
+							、大庆、北京、成都等地陆续成立了数十家分公司和一家专业烘焙技术培训
+							学校。目前拥有5000余名员工，近300家专营店。 旗下拥有米
+							旗、享+、太氏、国子轩、焙爱时光、
+							3.9度等多个子品牌，经营范围涉及烘焙、快餐、食品、植物饮
+							品、原料加工、冷饮六个行业
+						</div>
+						<div class="pt-3">
+							<img src="img/rybanner.jpg" class="img-fluid" alt="" />
+						</div>
+						<div>
+							<p class="story_pb mb-1">
+								<span class="my_color h5">企业经营宗旨：</span>
+								<span class="story_size">为顾客提供安全、美味、健康的食品和便捷、周到的服务，让顾客享受快乐的美食生活。</span>
+							</p>
+							<p class="story_pb mb-1">
+								<span class="my_color h5">企业信条：</span>
+								<span class="story_size">专业驱动创造，时尚源自现代。</span>
+							</p>
+							<p class="story_pb mb-1">
+								<span class="my_color h5">企业使命：</span>
+								<span class="story_size">用心烘焙，让生活更美味。</span>
+							</p>
+							<p class="story_pb mb-1">
+								<span class="my_color h5">企业理念：</span>
+								<span class="story_size">专业驱动创造，时尚源自现代。</span>
+							</p>
+							<p class="story_pb mb-1">
+								<span class="my_color h5">企业精神：</span>
+								<span class="story_size">品质是企业生存的根本；管理是企业竞争的根本；创新是企业发展的根本；人才是企业经营的根本；</span>
+							</p>
+							<p class="story_pb mb-1">
+								<span class="my_color h5">企业性格：</span>
+								<span class="story_size">勇于担当、全力以赴、交付结果。</span>
+							</p>
+							<p class="story_pb mb-2">
+								<span class="my_color h5">企业愿景</span>
+								<span class="story_size">时尚、自信、坚持。</span>
+							</p>
+							
+						</div>
+					</div>
+					<!--发展史-->
+					<div id="process" class="my_bgcolor1 tab-pane">
+						<div class="row">
+							<div class="col-5 text-white pl-5 pt-4">
+								<h5>米旗发展历程</h5>
+								<h5>company History</h5>
+							</div>
+							<div class="col-lg-7 col-md-12 text-center">
+								<div class="my_yearcolor">
+									1994-2017
+								</div>
+							</div>
+						</div>
+						<div>
+							<div id="right" ><button class="font-weight-bold btn my_bgcolor text-white"><</button></div>
+								<div id="next"><button class="font-weight-bold btn my_bgcolor text-white">></button></div>
+						</div>
+						<div class="process_slide">
+							<ul class="list-unstyled" id="slide" >
+								<li id="li1">
+									<p class="text-white m-0">第一枚米旗蛋糕面市米旗品牌正式走向市场。</p>
+									<h2 class="text-white pb-5">1994</h2>
+								</li>
+								<li id="li2">
+									<p class="text-white m-0">米旗哈尔滨公司成立，米旗从此步入多区域经营。</p>
+									<h2 class="text-white pb-5">1996</h2>
+								</li>
+								<li id="li3">
+									<p class="text-white m-0 pb-2">米旗大庆公司成立。</p>
+									<h2 class="text-white pb-5">1997</h2>
+								</li>
+								<li id="li4">
+									<p class="text-white m-0">米旗月饼荣获 “中国名牌月饼”称号。米旗北京公司成立。</p>
+									<h2 class="text-white pb-5">1998</h2>
+								</li>
+								<li id="li5">
+									<p class="text-white m-0">长春米旗食品有限公司成立。</p>
+									<h2 class="text-white pb-5">2000</h2>
+								</li>
+								<li id="li6">
+									<p class="text-white m-0">
+										西安太氏食品有限公司、西安米旗冷饮有限公司成立。
+										西安米旗、哈尔滨通过了ISO9001质量认证体系。 
+										西安米旗食品工业园建成投产
+									</p>
+									<h2 class="text-white pb-5">2002</h2>
+								</li>
+								<li id="li7">
+									<p class="text-white m-0">西安米旗、哈尔滨米旗通过了2000版ISO9001的换版认证，同时通过了HACCP安全管理体系认证。</p>
+									<h2 class="text-white pb-5">2003</h2>
+								</li>
+								<li id="li8">
+									<p class="text-white m-0">哈尔滨食品工业园一期工程竣工投产。</p>
+									<h2 class="text-white pb-5">2004</h2>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--品牌荣誉-->
+					<div id="honour" class="tab-pane">
+						<!--文字-->
+						<div class="h5 my_color pl-3">
+							载誉始发 极致创新
+						</div>
+						<div class="story_size font-weight-bold pl-3">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							每一次荣誉，都是振奋人心的铭记，每一次荣誉，更意味前行的帆
+							，载这米旗的执着信念，向新里程出发。<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							作为焙烤行业的旗帜，米旗跻身中国月饼十强企业，成为中国焙烤行
+							业最具竞争力十大品牌。9年获得全国烘焙行业的顶级赛事 品牌，上演
+							辉煌“9王冠”。米旗月饼连续8年获得中国“国饼十佳”称号，名至实归成为“中国名牌”。
+						</div>
+						<!--点击下一个 框 历史进程荣誉-->
+						<div id="honour_slide" class="container">
+							<div class="w-100 story_kuang">
+								<ul class="list-unstyled story_year nav nav-pills" id="kuang">
+									<li class="nav-item"><a class="nav-link active" data-toggle="pill" href="#demo" id="a0">2015</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="pill" href="#demo1" id="a1">2014</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="pill" href="#demo2" id="a2">2013</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="pill" href="#demo3" id="a3">2011</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="pill" href="#demo4" id="a4">2010</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="pill" href="#demo5" id="a5">2009</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="pill" href="#demo6" id="a6">2008</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="pill" href="#demo7" id="a7">2007</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="pill" href="#demo8" id="a8">2006</a></li>
+									<li class="nav-item"><a class="nav-link" data-toggle="pill" href="#demo9" id="a9">2004</a></li>
+								</ul>
+								<div id="honour_next">
+									<button class="btn my_bgcolor font-weight-bold text-white" id="honour_left"><</button>
+									<button class="btn my_bgcolor font-weight-bold text-white" id="honour_right">></button>
+								</div>
+							</div>
+						</div>
+						<!--荣誉事件-->
+						<div class="tab-content">
+							<div id="demo"  class="tab-pane active">
+								<p id="years0" class=" h2 my_color"></p>
+								<p id="honour0" class="story_size font-weight-bold"></p>	
+							</div>
+							<div id="demo1" class="tab-pane">
+								<p id="years1" class=" h2 my_color"></p>
+								<p id="honour1" class="story_size font-weight-bold"></p>	
+							</div>
+							<div id="demo2" class="tab-pane">
+								<p id="years2" class=" h2 my_color"></p>
+								<p id="honour2" class="story_size font-weight-bold"></p>	
+							</div>
+							<div id="demo3" class="tab-pane">
+								<p id="years3" class=" h2 my_color"></p>
+								<p id="honour3" class="story_size font-weight-bold"></p>	
+							</div>
+							<div id="demo4" class="tab-pane">
+								<p id="years4" class="years h2 my_color"></p>
+								<p id="honour4" class="story_size font-weight-bold"></p>	
+							</div>
+							<div id="demo5" class="tab-pane">
+								<p id="years5" class=" h2 my_color"></p>
+								<p id="honour5" class="story_size font-weight-bold"></p>	
+							</div>
+							<div id="demo6" class="tab-pane">
+								<p id="years6" class=" h2 my_color"></p>
+								<p id="honour6" class="story_size font-weight-bold"></p>	
+							</div>
+							<div id="demo7" class="tab-pane">
+								<p id="years7" class=" h2 my_color"></p>
+								<p id="honour7" class="story_size font-weight-bold"></p>	
+							</div>
+							<div id="demo8" class="tab-pane">
+								<p id="years8" class=" h2 my_color"></p>
+								<p id="honour8" class="story_size font-weight-bold"></p>	
+							</div>
+							<div id="demo9" class="tab-pane">
+								<p id="years9" class="h2 my_color"></p>
+								<p id="honour9" class="story_size font-weight-bold"></p>	
+							</div>
+						</div>
+					</div>
+					<!--门店形象-->
+					<div id="image" class="tab-pane">
+						<!--头部文字-->
+						<div>
+							<p class="my_color h5">米旗总会给您带来快乐</p>
+							<p class="story_size font-weight-bold m-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;无论选择走进哪一家米旗店，都能享受同样的美味，得到一样的快乐和关心。米旗相信，创造更高品质的美味，以真诚的态度回报顾客，必将赢得顾客内心的喜爱，让米旗产品进入顾客口里，留在顾客心里。</p>
+							<p class="story_size font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;便捷、周到、热心、微笑是米旗的服务准则。在米旗专卖店，每双手递出美食的同时，也将快乐与温馨一并传递，相信一定能感受的到。</p>
+						</div>
+						<!--中间图片的切换-->
+						<div id="lunbo" class="carousel" data-ride='carousel'>
+							<ul class="list-unstyled carousel-inner">
+								<li class="carousel-item active"><img src="img/f601a87e108307ecfc2c34acc6d3bf7b.jpg" alt="" width="544px" height="296px"/></li>
+								<li class="carousel-item"><img src="img/08063f082105e2cafdb837b3bb55ac39.jpg" alt=""  width="544px" height="296px"/></li>
+								<li class="carousel-item"><img src="img/9e0684cff0f43ec0134ab2f53d4a736a.jpg" alt=""  width="544px" height="296px"/></li>
+							</ul>
+						</div>
+						<!--左右箭头-->
+						<a href="#lunbo" data-slide='prev' class="carousel-control-prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a href="#lunbo" data-slide='next' class="carousel-control-next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+						<div class="img1">
+							<img src="img/historylogo.png" width="100%" alt="" />
+						</div>
+						<div>
+							<p class="font-weight-bold story_size mt-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;米旗在全国市场已拥有400多家专营店，每一间米旗的专卖店，都是精心设计的视觉盛宴，现代欧式的装修风格，已然成为米旗独有的景观。</p>
+							<p class="font-weight-bold story_size">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“透视厨房”作业让顾客目睹面包师的巧妙手艺，在购买面包的同时感受面点制作所带来的乐趣。 整洁的店面环境，始终如一的微笑服务，统一的服装要求与个性化专业定制，构成了米旗一流的服务体系，专卖店的所有服务人员都经过系统专业培训，致力于为顾客创造享受快乐体验物超所值的消费过程。</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-12 pt-0">
+					 <ul class="nav nav-pills text-center">
+       					 <li class="nav-item" id="ul1"><a class="nav-link active" data-toggle="pill" href="#introduction">
+       					 	<p class="p-0 m-0">品牌介绍</p>
+							<span>INTRODUCTION</span></a>
+       					 </li>
+       					
+       					 <li class="nav-item" id="ul2"><a class="nav-link" data-toggle="pill" href="#process">
+       					 	<p class="p-0 m-0">品牌历程</p>
+							<span>PROCESS</span></a>
+       					 </li>
+       					 
+       					 <li class="nav-item" id="ul3"><a class="nav-link" data-toggle="pill" href="#honour">
+       					 	<p class="p-0 m-0">品牌荣誉</p>
+							<span>HONOUR</span></a>
+       					 </li>
+       					 <li class="nav-item" id="ul4"><a class="nav-link" data-toggle="pill" href="#image">
+       					 	<p class="p-0 m-0">门店形象</p>
+							<span>SRORE IMAGE</span></a>
+       					 </li>
+   					 </ul>
+					
+				</div>
+			</div>
+		</div>
+	<footer>
+		<hr class="mt-5"/>
+			<div class="container">
+				<!--文字-->
+				<div class="row">
+					<div class="col-9 offset-3 my_color1">享受美味，享受生活</div>
+				</div>
+				<div class="row">
+					<div class="col-8 offset-4 my_color1">Enjoy delicious life</div>
+				</div>
+				<!--微信、微博-->
+				<div id="shaoma">
+					<ul class="list-unstyled" id="list">
+						<li class="weixin">
+							<div><img src="img/AlertEWM.png" alt=""  width="100px"/></div>
+							<a href="#"><img src="img/wx.svg" class="mr-3" width="33px"/></a>
+							
+						</li>
+						<li class="weibo">
+							<div><img src="img/skype.jpg" alt=""  width="100px"/></div>
+							<a href="#"><img src="img/wb.svg" class="ml-5" width="33px"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="tubiao">
+					<img src="img/markets1.svg" width="50px" alt="" />
+					<img src="img/markets2.svg"  width="100px"  alt="" />
+					<img src="img/markets3.svg"  width="100px" alt="" />
+					<img src="img/Hbb.png" width="54px"   alt="" /> 	
+			</div>
+			<div class="row" id="footer">
+				<div class="col-12 mt-3 text-center">邮箱：kefu@maky.com.cn | 地址：中国 西安 经济技术开发区凤城三路33号 | 电话：400-022-6999</div>
+				<div class="col-12 mt-3 mb-3 text-center">Copyright © www.maky.com.cn 陕ICP备09003989号</div>
+			</div>
+			</footer>
+	<script type="text/javascript">
+//	发展历程下一页的点击按钮
+	next.onclick=function(){
+	slide.style.left='-847px';
+		setTimeout(function(){li5.style.top='160px';
+			setTimeout(function(){li6.style.top='40px';
+				setTimeout(function(){li7.style.top='55px';
+					setTimeout(function(){li8.style.top='150px';},500);	
+				},500);
+			},500);
+		},500);	
+	}
+	right.onclick=function(){
+		slide.style.left='0';
+		li1.style.top='300px';
+		li2.style.top='300px';
+		li3.style.top='300px';
+		li4.style.top='300px';
+		setTimeout(function(){li1.style.top='130px';
+			setTimeout(function(){li2.style.top='130px';
+				setTimeout(function(){li3.style.top='170px';
+					setTimeout(function(){li4.style.top='130px';},500);	
+				},500);
+			},500);
+		},500);	
+	}
+	ul2.onclick=function(){
+		slide.style.left='0';
+		li1.style.top='300px';
+		li2.style.top='300px';
+		li3.style.top='300px';
+		li4.style.top='300px';
+		setTimeout(function(){li1.style.top='130px';
+			setTimeout(function(){li2.style.top='130px';
+				setTimeout(function(){li3.style.top='170px';
+					setTimeout(function(){li4.style.top='130px';},500);	
+				},500);
+			},500);
+		},500);	
+	}
+	//点击荣誉左右按钮是，跳转下一页
+	honour_right.onclick=function(){
+		kuang.style.left='-750px';
+	}
+	honour_left.onclick=function(){
+		kuang.style.left='0px';
+	}
+	//通过点击年份，从数据空中拿出数据，
+	a0.onclick=function(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			var result=xhr.responseText;
+			var obj=JSON.parse(result)
+				years0.innerHTML=obj[0].story_time+'年';
+				honour0.innerHTML=obj[0].honour;
+			}
+		}
+		xhr.open('get','/content/story?story_time='+a0.innerHTML,true);
+		xhr.send();
+	}
+	a1.onclick=function(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			var result=xhr.responseText;
+			var obj=JSON.parse(result)
+				years1.innerHTML=obj[0].story_time+'年';
+				honour1.innerHTML=obj[0].honour;
+			}
+		}
+		xhr.open('get','/content/story?story_time='+a1.innerHTML,true);
+		xhr.send();
+	}
+	a2.onclick=function(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			var result=xhr.responseText;
+			var obj=JSON.parse(result)
+				years2.innerHTML=obj[0].story_time+'年';
+				honour2.innerHTML=obj[0].honour;
+			}
+		}
+		xhr.open('get','/content/story?story_time='+a2.innerHTML,true);
+		xhr.send();
+	}
+	a3.onclick=function(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			var result=xhr.responseText;
+			var obj=JSON.parse(result)
+				years3.innerHTML=obj[0].story_time+'年';
+				honour3.innerHTML=obj[0].honour;
+			}
+		}
+		xhr.open('get','/content/story?story_time='+a3.innerHTML,true);
+		xhr.send();
+	}
+	a4.onclick=function(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			var result=xhr.responseText;
+			var obj=JSON.parse(result)
+				years4.innerHTML=obj[0].story_time+'年';
+				honour4.innerHTML=obj[0].honour;
+			}
+		}
+		xhr.open('get','/content/story?story_time='+a4.innerHTML,true);
+		xhr.send();
+	}
+	a5.onclick=function(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			var result=xhr.responseText;
+			var obj=JSON.parse(result)
+				years5.innerHTML=obj[0].story_time+'年';
+				honour5.innerHTML=obj[0].honour;
+			}
+		}
+		xhr.open('get','/content/story?story_time='+a5.innerHTML,true);
+		xhr.send();
+	}
+	a6.onclick=function(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			var result=xhr.responseText;
+			var obj=JSON.parse(result)
+				years6.innerHTML=obj[0].story_time+'年';
+				honour6.innerHTML=obj[0].honour;
+			}
+		}
+		xhr.open('get','/content/story?story_time='+a6.innerHTML,true);
+		xhr.send();
+	}
+	a7.onclick=function(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			var result=xhr.responseText;
+			var obj=JSON.parse(result)
+				years7.innerHTML=obj[0].story_time+'年';
+				honour7.innerHTML=obj[0].honour;
+			}
+		}
+		xhr.open('get','/content/story?story_time='+a7.innerHTML,true);
+		xhr.send();
+	}
+	a8.onclick=function(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			var result=xhr.responseText;
+			var obj=JSON.parse(result)
+				years8.innerHTML=obj[0].story_time+'年';
+				honour8.innerHTML=obj[0].honour;
+			}
+		}
+		xhr.open('get','/content/story?story_time='+a8.innerHTML,true);
+		xhr.send();
+	}
+	a9.onclick=function(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			var result=xhr.responseText;
+			var obj=JSON.parse(result)
+				years9.innerHTML=obj[0].story_time+'年';
+				honour9.innerHTML=obj[0].honour;
+			}
+		}
+		xhr.open('get','/content/story?story_time='+a9.innerHTML,true);
+		xhr.send();
+	}
+	function story(times,years,honours){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			var result=xhr.responseText;
+			var obj=JSON.parse(result)
+				years9.innerHTML=obj[0].story_time+'年';
+				honour9.innerHTML=obj[0].honour;
+			}
+		}
+		xhr.open('get','/content/story?story_time='+times,true);
+		xhr.send();
+	}
+		</script>
+	</body>
+</html>

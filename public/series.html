@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+   		<link rel="stylesheet" href="css/bootstrap.css"/>
+    	<script src="js/jquery.min.js"></script>
+    	<script src="js/popper.min.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
+    	<style>
+    		*{
+	    		margin: 0;
+	    		padding: 0;
+	    		box-sizing: border-box;
+    		}
+    		/*页面顶部下边框阴影*/
+    		@media screen and (min-width: 992px) {
+    			.my_footer{
+    				height: 30rem;
+    			}
+    		}	
+    		@media screen and (max-width: 991px) {
+    			.my_footer{
+    				height: 30rem;
+    			}
+    		}
+    		@media screen and (max-width: 767px) {
+    			.my_footer{
+    				height: 33rem;
+    			}
+    		}
+    		/*页面头部*/
+    		.top{
+    			border: 2px solid transparent;
+    			border-bottom-color: #e9ded0;
+    			box-shadow: 0px 2px 10px #e9ded0;
+    		}
+    	.my_color{
+    		color: #c9a16d;
+    	}
+    	.my_bgcolor{
+    		background: #d2b084;
+    	}
+    	.top_bgcolor{
+    		background: #f8f8f8;
+    	}
+    	.my_h4>h4{
+    		margin-top:30px ;
+    		color: #382722;
+    	}
+    
+    	#search::-webkit-input-placeholder{
+    		color: #dfc7a7;
+    	}
+    	#search:focus {
+  			color: #495057;
+  			background-color: #fff;
+  			border-color: #dfc7a7;
+  			outline: 0;
+  			box-shadow: 0 0 0 0.2rem #dfc7a7;
+		}
+		.layui-nav-item .nav-link{
+			color:#382722 ;
+		}
+		.layui-nav-item .nav-link.active{
+			background: white;
+			color: #c9a16d;
+		}
+		.blackForest{
+			width: 95%;
+			border: 2px solid #fff;
+			border-bottom: 3px solid #c9a16d;
+			text-align: center;
+			margin: 0 auto;
+			margin-left: 20px;
+			margin-top:15px ;
+			
+		}
+		.blackForest>a{
+			color: #c9a16d;
+			text-decoration: none;
+			font-weight:700 ;
+		}
+		/*图片的翻转，显示背面的文字*/
+		.rotate1{
+			width: 200px;
+			height: 290px;
+			margin: 0 auto;
+			margin-bottom: 10px;
+			position:  relative;
+			cursor: pointer;
+			perspective: 2000px;
+		}
+		.my_before{
+			width: 100%;
+			height: 100%;
+			margin-left: 23px;
+			margin-top: 30px;
+			
+			width: 226px !important;
+			height: 220px !important;
+			position: absolute;
+			backface-visibility:hidden ;/*背向隐藏*/
+			transition: 2s;
+		}
+		/*第一页的9张图片*/
+		#before1{
+			background: url(img/p8.jpg) no-repeat center center;
+		}
+		#before2{
+			background: url(img/p1.jpg) no-repeat center center;
+		}
+		#before3{
+			
+			background: url(img/p2.jpg) no-repeat center center;
+		}
+		#before4{
+			background: url(img/p3.jpg) no-repeat center center;
+		}
+		#before5{
+			background: url(img/p4.jpg) no-repeat center center;
+		}
+		#before6{
+			background: url(img/p5.jpg) no-repeat center center;
+		}
+		#before7{
+			background: url(img/p6.jpg) no-repeat center center;
+		}
+		#before8{
+			background: url(img/p7.jpg) no-repeat center center;
+		}
+		#before9{
+			background: url(img/p9.jpg) no-repeat center center;
+		}
+		#before10{
+			background: url(img/p10.jpg) no-repeat center center;
+		}
+		#before11{
+			background: url(img/p11.jpg) no-repeat center center;
+		}
+		#before12{
+			background: url(img/p12.jpg) no-repeat center center;
+		}
+		#before13{
+			background: url(img/p13.jpg) no-repeat center center;
+		}
+		.sou1{
+			width: 380px;
+			height: 240px;
+		}
+		.my_after{
+			width: 100%;
+			height: 240px;
+			position: absolute;
+			color: #c9a16d;
+			background: #fff;
+			font-size:12px ;
+			box-sizing: border-box;
+			padding-top:40px ;
+			transform: rotateY(180deg);
+			backface-visibility: hidden;
+			transition: 2s;
+			text-align: center;
+		}
+		.rotate1:hover .my_before{
+			transform: rotateY(180deg);
+		}
+		.rotate1:hover .my_after{
+			transform: rotateY(360deg);
+		}
+		/*用一个div占用图片的位置*/
+		.my_after1{
+			width: 200px;
+			height: 240px;
+			border: 1px solid transparent;
+		}
+		#dd{
+			position: absolute;
+			padding: 3px;
+			left:15rem;
+			z-index: 1;
+		}
+		#dd>a{
+			text-decoration: none;
+		}
+		#dd>a:hover{
+			text-decoration: none;
+			border-bottom: 1px solid #d2b084;
+		}
+		#sou1{
+			position: relative;
+			top: -70px;
+			left: 277px;
+		}
+		/*底部*/
+		.my_color1{
+		font-size: 24px;
+		font-weight: 700px;
+		color: #cd9e72;
+	}
+	#list{
+		display: flex;
+		position: relative;
+		width: 150px;
+		height: 35px;
+		border: 1px solid transparent;
+		margin: 40px auto;
+		
+		/*overflow: hidden;*/
+	}
+	.weixin>div{
+		position: absolute;
+		top: -100px;
+		left: -40px;
+		opacity: 0;
+		transition: 1s;
+	}
+	.weibo>div{
+		position: absolute;
+		top: -100px;
+		left:65px;opacity: 0;
+			transition: 1s;
+	}
+	.weixin:hover div{
+		opacity: 1;
+	}.weibo:hover div{
+		opacity: 1;
+	}
+	#tubiao{
+		margin-left:42% ;
+		margin-bottom: 50px;
+	}
+	#footer{
+		color: #e0d7ce;
+		background: #c9a16d;
+	}
+	/* 模态框 */
+	.modal-content{
+		width: 1000px;
+		height: 600px;
+		margin: 0 -300px;
+		margin-top: 100px;
+		border: 5px dashed #c9a16d;
+	}
+	/*关闭按钮大小*/
+	.modal-header .close{
+		padding: .5rem;
+		margin: -1.5rem -1rem -2rem auto;
+	}
+	/*图片的内、外边距问题*/
+	#modal_body{
+		padding: 0px;
+		padding-left:33px ;
+		margin: 0 auto;
+		
+	}
+	#body_name{
+		border-bottom: 1px dotted #c9a16d;
+	}
+	#body_tur{
+		border-bottom: 1px dotted #c9a16d;
+	}
+	#text-right{
+		display: block;
+		text-align: right;
+		color: #c9a16d;
+	}
+	#foot_name{
+		margin-left: 20px;
+		color: #c9a16d;
+	}
+	#foot_tur{
+		margin-top: 15px;
+		font-size:12px;
+		color: #c9a16d;
+		padding-bottom: 20px;
+		border-bottom: 1px dotted #c9a16d;
+	}
+	#erweima2{
+		width: 162px;
+		height: 180px;
+		border: 2px solid #c9a16d;
+		overflow: hidden;
+		border-radius: 3px;
+		padding: 5px;
+		margin: 30px auto;
+		
+	}
+	#erweima2 p{
+		width: 162px;
+		position: relative;
+		background:#c9a16d ;
+		margin: 0;
+		padding: 0;
+		left:-7px;
+	}
+	#foot_condition,#foot_type,#foot_sweet,#foot_size{
+		margin: 0;
+		padding: 0;
+		font-size: .8rem;
+		color: #c9a16d;
+	}
+	#foot_pic1,#foot_pic2,#foot_pic3{
+		border: 1px solid #c9a16d;
+		border: 2px solid transparent;
+		cursor: pointer;
+	}
+	#foot_pic1:hover,#foot_pic2:hover,#foot_pic3:hover{
+		border: 2px solid #bc9464;
+	}
+	#one,#two,#three,#four,#five{
+		display: none;
+	}
+	/*模态框的三小图片的样式*/
+	#foot_pic_1>img,#foot_pic_2>img,#foot_pic_3>img{
+		cursor: pointer;
+	}
+	#foot_pic_1>img:hover,#foot_pic_2>img:hover,#foot_pic_3>img:hover{
+		border: 1px solid #c9a16d;
+	}
+    	</style>
+	</head>
+	<body>
+		<!--顶部的样式及其位置-->
+		<div class="row top_bgcolor top">
+			<div class="col-lg-5 col-sm-12 text-center">
+				<a href="index.html"><img src="img/logo.png" alt="" class="pt-3 pb-2" /></a>
+			</div>
+			<div class="col-lg-7 col-sm-12 text-center">
+				<a href="series.html"><img src="img/nav1.svg" class="pt-3 pb-3 pr-2" width="150px" alt="" /></a>
+				<a href="Story.html"><img src="img/nav22.svg" class="pt-3 pb-3 pr-2" width="150px" alt="" /></a>
+				<a href="public.html"><img src="img/nav33.svg" class="pt-3 pb-3 pr-2" width="150px" alt="" /></a>
+				<a href="service.html"><img src="img/nav44.svg" class="pt-3 pb-3 pr-2" width="150px" alt="" /></a>
+			</div>
+		</div>
+		<!--<!--中间大图-->
+		<div id="content_pic">
+			<img src="img/slide2.jpg" width="100%" alt="" />
+		</div>
+		<div class="container my_h4">
+				<h4>米旗崇尚“专业精神 永无止境”</h4>
+				<p class="my_color h5">The spirit of professionalism is endless food life.</p>
+				<div>
+					<ul class="list-unstyled">
+						<li class="">
+							<input type="text" name="" id="search" value="" class="form-control w-25" placeholder="搜索关键词：黑森林蛋糕"/>
+						</li>
+					</ul>
+				</div>
+		</div>
+<!--导航栏-->
+<div class="container">
+	<div class="row">
+		<ul class=" col-12 pl-3 mt-3 nav nav-pills">
+			<li class="layui-nav-item " id="sou1">
+				<a href="#sou" class="nav-link btn my_bgcolor" data-toggle='pill'>嗖</a>
+			</li>
+			<li class="layui-nav-item">
+				<a href="#now" class="nav-link active" data-toggle='pill'><img src="img/bb1.png" alt="" />现做蛋糕</a>
+			</li>
+			<li class="layui-nav-item">
+				<a href="#sweet" class="nav-link" data-toggle='pill'><img src="img/bb2.png" alt="" />甜点系列</a>
+			</li>
+			<li class="layui-nav-item">
+				<a href="#health" class="nav-link" data-toggle='pill'><img src="img/bb3.png" alt="" />健康中心</a>
+			</li>
+			<li class="layui-nav-item">
+				<a href="#bread" class="nav-link" data-toggle='pill'><img src="img/bb4.png" alt="" />面包系列</a>
+			</li>
+			<li class="layui-nav-item">
+				<a href="#cutblock" class="nav-link" data-toggle='pill'><img src="img/bb5.png" alt="" />切块系列</a>
+			</li>
+		</ul>
+	</div>
+	<div class="tab-content">
+		<div id="now" class="tab-pane active">
+			<!-- <div id="dd" class="my_bgcolor">
+					<a href="#" class="text-white">水果蛋糕</a>
+					<a href="#" class="text-white">欧式蛋糕</a>
+					<a href="#" class="text-white">酸奶蛋糕</a>
+					<a href="#" class="text-white">寿庆蛋糕</a>
+					<a href="#" class="text-white">儿童蛋糕</a>
+					<a href="#" class="text-white">稀奶油蛋糕</a> 
+				</div> -->
+			<div class="row" id="products">
+					<!-- <div class="col-lg-4 col-6 bg-white rotate1">
+						
+						<div class="my_before" id="before1"></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+							<p class="my_color">商品分类：欧式蛋糕</p>
+							<p class="my_color">商品甜度：☆☆☆</p>
+							<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+							<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">黑森林</a></div>
+					</div>
+					<div class="col-lg-4 col-6 bg-white rotate1">
+						<div class="my_before" id="before2"></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+							<p class="my_color">商品分类：欧式蛋糕</p>
+							<p class="my_color">商品甜度：☆☆☆</p>
+							<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+							<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">红丝绒带高</a></div>
+					</div>
+					<div class="col-lg-4 col-6 bg-white rotate1">
+						<div class="my_before" id="before3"></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+							<p class="my_color">商品分类：欧式蛋糕</p>
+							<p class="my_color">商品甜度：☆☆☆</p>
+							<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+							<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">黄金海岸</a></div>
+					</div>
+					<div class="col-lg-4 col-6 mt-5 bg-white rotate1">
+						<div class="my_before" id="before4"></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+							<p class="my_color">商品分类：欧式蛋糕</p>
+							<p class="my_color">商品甜度：☆☆☆</p>
+							<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+							<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">卡布奇诺</a></div>
+					</div>
+					<div class="col-lg-4 col-6 mt-5 bg-white rotate1">
+						<div class="my_before" id="before5"></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+							<p class="my_color">商品分类：欧式蛋糕</p>
+							<p class="my_color">商品甜度：☆☆☆</p>
+							<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+							<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">蓝莓乳酪</a></div>
+					</div>					
+					<div class="col-lg-4 col-6 mt-5 bg-white rotate1">
+						<div class="my_before" id="before6"></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+							<p class="my_color">商品分类：欧式蛋糕</p>
+							<p class="my_color">商品甜度：☆☆☆</p>
+							<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+							<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">榴莲巧克力</a></div>
+					</div>					
+					<div class="col-lg-4 col-6 mt-5 bg-white rotate1">
+						<div class="my_before" id="before7"></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+							<p class="my_color">商品分类：欧式蛋糕</p>
+							<p class="my_color">商品甜度：☆☆☆</p>
+							<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+							<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">芒果慕斯</a></div>
+					</div>					
+					<div class="col-lg-4 col-6 mt-5 bg-white rotate1">
+						<div class="my_before" id="before8"></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+							<p class="my_color">商品分类：欧式蛋糕</p>
+							<p class="my_color">商品甜度：☆☆☆</p>
+							<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+							<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">抹茶蜜语</a></div>
+					</div>					
+					<div class="col-lg-4 col-6 mt-5 bg-white rotate1">
+						<div class="my_before" id="before9"></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+							<p class="my_color">商品分类：欧式蛋糕</p>
+							<p class="my_color">商品甜度：☆☆☆</p>
+							<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+							<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">巧克力城堡</a></div>
+					</div> -->
+			</div>
+		</div>
+		<div id="sweet" class="tab-pane">
+			<div class="row">
+				<div class="col-lg-4 col-6 mt-5 bg-white rotate1">
+						<div class="my_before before9" ></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+							<p class="my_color">商品分类：欧式蛋糕</p>
+							<p class="my_color">商品甜度：☆☆☆</p>
+							<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+							<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">黑森林</a></div>
+					</div>
+				<div class="col-lg-4 col-6 mt-5 bg-white rotate1">
+						<div class="my_before before8" ></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+							<p class="my_color">商品分类：欧式蛋糕</p>
+							<p class="my_color">商品甜度：☆☆☆</p>
+							<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+							<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">黑森林</a></div>
+					</div>
+				<div class="col-lg-4 col-6 mt-5 bg-white rotate1">
+						<div class="my_before before7" ></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+							<p class="my_color">商品分类：欧式蛋糕</p>
+							<p class="my_color">商品甜度：☆☆☆</p>
+							<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+							<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">黑森林</a></div>
+					</div>
+				<div class="col-lg-4 col-6 mt-5 bg-white rotate1">
+						<div class="my_before before6" ></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+							<p class="my_color">商品分类：欧式蛋糕</p>
+							<p class="my_color">商品甜度：☆☆☆</p>
+							<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+							<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">黑森林</a></div>
+					</div>
+				<div class="col-lg-4 col-6 mt-5 bg-white rotate1">
+						<div class="my_before before5" ></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+							<p class="my_color">商品分类：欧式蛋糕</p>
+							<p class="my_color">商品甜度：☆☆☆</p>
+							<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+							<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">黑森林</a></div>
+					</div>
+				<div class="col-lg-4 col-6 mt-5 bg-white rotate1">
+					<div class="my_before before4" ></div>
+					<div class="my_after">
+						<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;德意志人民最骄傲的甜品，融合了樱桃的酸甜、淡奶油的香滑，巧克力的微苦和樱桃酒的醇香</p>
+						<p class="my_color">商品分类：欧式蛋糕</p>
+						<p class="my_color">商品甜度：☆☆☆</p>
+						<p class="my_color">保鲜条件：0~4 °C  保藏12小时最佳</p>
+						<p class="my_color">购买尺寸： 15X15cm  18X18cm </p>
+					</div>
+					<div class="my_after1"></div>
+					<div class="blackForest"><a href="#">黑森林</a></div>
+				</div>
+			</div>
+		</div>
+		<div id="health" class="tab-pane">123456</div>
+		<div id="bread" class="tab-pane"></div>
+		<div id="cutblock" class="tab-pane"></div>
+		<!--搜索商品并渲染到页面当中去-->
+		<div id="sou" class="tab-pane">
+			<div class="row">
+				<div class="col-lg-4 col-6 mt-5 bg-white rotate1">
+					<div class="my_before" id="tu">
+					</div>
+					<div class="my_after">
+						<p class="my_color" id="sou_introduction"></p>
+						<p class="my_color" id="sou_type"></p>
+						<p class="my_color" id="sou_sweet"></p>
+						<p class="my_color" id="sou_condition"></p>
+						<p class="my_color" id="sou_size"></p>
+					</div>
+					<div class="my_after1"></div>
+					<div class="blackForest"><a href="#" id="sou_name"></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--<button data-toggle="modal" data-target="#demo" class="btn btn-danger">打开模态框</button>-->
+	<!--第一层模态框-->
+<div id="demo" class="modal">
+	<!-- 第二层-->
+	<div class="modal-dialog"><!--主要负责响应式布局-->
+	<!-- 第三次-->
+		<div class="modal-content">
+			<!--关闭按钮-->
+			<div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+			
+			<div class="modal-body row" id="modal_body">
+				<!--图片-->
+				 <div class="col-9" id="foot_pic">
+				</div>
+				<div class="col-3 p-0 mt-5">
+					<div id="body_name">
+						<!--模态框 商品名字-->
+						<h3 id="foot_name"></h3>
+						<i id="text-right">Enjoy to enjoy life</i>
+					</div>
+						<!--模态框 商品介绍-->
+					 <div id="foot_tur"></div>
+					<div id="erweima2"> 
+						<img src="img/1526715285.png" width="150px"/>
+						<p>扫二维码，立即购买</p>
+					</div>
+				</div> 
+				<div class="col-6">
+						<!--模态框 商品详情-->
+				 <p id="foot_type"></p>
+					<p id="foot_sweet"></p>
+					<p id="foot_condition"></p>
+					<p id="foot_size"></p>
+				</div> 
+				<div class="col-6">
+					<!--添加三张图片-->
+					<span id="foot_pic_1"></span>
+					<span id="foot_pic_2"></span>
+					<span id="foot_pic_3"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<footer>
+		<hr class="mt-5"/>
+			<div class="container">
+				<!--文字-->
+				<div class="row">
+					<div class="col-9 offset-3  my_color1">享受美味，享受生活</div>
+				</div>
+				<div class="row">
+					<div class="col-8 offset-4  my_color1">Enjoy delicious life</div>
+				</div>
+				<!--微信、微博-->
+				<div id="shaoma">
+					<ul class="list-unstyled" id="list">
+						<li class="weixin">
+							<div><img src="img/AlertEWM.png" alt=""  width="100px"/></div>
+							<a href="#"><img src="img/wx.svg" class="mr-3" width="33px"/></a>
+							
+						</li>
+						<li class="weibo">
+							<div><img src="img/skype.jpg" alt=""  width="100px"/></div>
+							<a href="#"><img src="img/wb.svg" class="ml-5" width="33px"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="tubiao">
+					<img src="img/markets1.svg" width="50px" alt="" />
+					<img src="img/markets2.svg"  width="100px"  alt="" />
+					<img src="img/markets3.svg"  width="100px" alt="" />
+					<img src="img/Hbb.png" width="54px"   alt="" /> 	
+			</div>
+			<div class="row" id="footer">
+				<div class="col-12 mt-3 text-center">邮箱：kefu@maky.com.cn | 地址：中国 西安 经济技术开发区凤城三路33号 | 电话：400-022-6999</div>
+				<div class="col-12 mt-3 mb-3 text-center">Copyright © www.maky.com.cn 陕ICP备09003989号</div>
+			</div>
+			</footer>
+	<script type="text/javascript">
+		sou1.onclick=function(){
+			console.log(search.value)
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=xhr.responseText;
+					var obj=JSON.parse(result);
+					if(obj!=-1){
+						tu.innerHTML="<img src=img/"+obj[0].pic1+" class='sou1'>"
+						sou_introduction.innerHTML=obj[0].introduce;
+						sou_type.innerHTML=obj[0].type;
+						sou_sweet.innerHTML=obj[0].sweet;
+						sou_condition.innerHTML=obj[0].condition1;
+						sou_size.innerHTML=obj[0].size;
+						sou_name.innerHTML=obj[0].uname;
+					}else{
+						alert("未找到你需要搜索的商品")
+					}
+					
+				}
+			}
+		xhr.open('get','/content/sou?uname='+search.value,true);
+		xhr.send();
+		}
+	</script>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+	(function(){
+  		$.ajax({
+    	url:"http://127.0.0.1:3000/content/series",
+    	type:"get",
+    	dataType:"json" //自动JSON.parse()
+  	}).then(function(result){
+		var html="";
+		for(var res of result){
+			html+=`<div class="col-lg-3 col-6 bg-white rotate1" data-toggle="modal" data-target="#demo" id="details${res.id}">
+						<div class="my_before" id="before_${res.id}" style="background:url(${res.img_url}) no-repeat center center"></div>
+						<div class="my_after">
+							<p class="my_color">&nbsp;&nbsp;&nbsp;&nbsp;${res.details}</p>
+							<p class="my_color">商品分类：${res.familys}</p>
+							<p class="my_color">商品甜度：${res.sweet}</p>
+							<p class="my_color">保鲜条件：${res.conditions}</p>
+							<p class="my_color">购买尺寸：${res.sizes} </p>
+						</div>
+						<div class="my_after1"></div>
+						<div class="blackForest"><a href="#">${res.names}</a></div>
+					</div>`;
+		}
+		products.innerHTML=html;
+  	})
+	  
+})();
+$("#products").click(function(e){
+	var divs=e.target;
+	var id=parseInt(divs.id.split("_")[1]);
+	console.log(id)
+	$.ajax({
+		url:"http://127.0.0.1:3000/content/series_details",
+		type:"get",
+		data:{id},
+		dataType:"json"
+	}).then(function(obj){
+		console.log(obj)
+		var html='';
+				html+=`<div class="col-9" id="foot_pic">
+					<img src=/${obj[0].img_url} width=700px height=420px/>
+
+                		</div>
+                	<div class="col-3 p-0 mt-5">
+                		<div id="body_name">
+                			<!--模态框 商品名字-->
+                			<h3 id="foot_name">${obj[0].dname}</h3>
+                			<i id="text-right">Enjoy to enjoy life</i>
+                		</div>
+                			<!--模态框 商品介绍-->
+                		<div id="foot_tur">${obj[0].details}</div>
+                		<div id="erweima2"> 
+                			<img src="img/1526715285.png" width="150px"/>
+                			<p>扫二维码，立即购买</p>
+                		</div>
+                	</div>
+                	<div class="col-6">
+                			<!--模态框 商品详情-->
+                		<p id="foot_type">${obj[0].familys}</p>
+                		<p id="foot_sweet">${obj[0].sweet}</p>
+                		<p id="foot_condition">${obj[0].conditions}</p>
+                		<p id="foot_size">${obj[0].sizes}</p>
+                	</div>
+                	<div class="col-6">
+                		<!--添加三张图片-->
+                		<span id="foot_pic_1">
+							<img id='foot_pic_11' src=/${obj[0].md1} width=80px height=60px />
+						</span>
+                		<span id="foot_pic_2">
+							<img id='foot_pic_22' src=/${obj[0].md2} width=80px height=60px />
+						</span>
+                		<span id="foot_pic_3">
+							<img id='foot_pic_33' src=/${obj[0].md3} alt='图片已损坏' width=80px height=60px />
+						</span>
+                	</div>`;
+					modal_body.innerHTML=html;
+				foot_pic_11.onclick=function(){
+					foot_pic.innerHTML="<img src=/"+obj[0].md1+" width=700px/>"
+				}
+				foot_pic_22.onclick=function(){
+					foot_pic.innerHTML="<img src=/"+obj[0].md2+" width=700px/>"
+				}
+				foot_pic_33.onclick=function(){
+					foot_pic.innerHTML="<img src=/"+obj[0].md3+" width=700px/>"
+				}	
+	})
+})
+// function insert(value1){
+// 		var xhr=new XMLHttpRequest();
+// 		xhr.onreadystatechange=function(){
+// 			if(xhr.readyState==4&&xhr.status==200){
+// 				var result=xhr.responseText;
+// 				var obj=JSON.parse(result);
+// 				console.log(obj)
+// 				var html='';
+// 				html+=`<div class="col-9" id="foot_pic">
+// 							<img src=/img/${obj[0].pic1} width=700px/>
+//                 		</div>
+//                 	<div class="col-3 p-0 mt-5">
+//                 		<div id="body_name">
+//                 			<!--模态框 商品名字-->
+//                 			<h3 id="foot_name">${obj[0].uname}</h3>
+//                 			<i id="text-right">Enjoy to enjoy life</i>
+//                 		</div>
+//                 			<!--模态框 商品介绍-->
+//                 		<div id="foot_tur">${obj[0].introduce}</div>
+//                 		<div id="erweima2"> 
+//                 			<img src="img/1526715285.png" width="150px"/>
+//                 			<p>扫二维码，立即购买</p>
+//                 		</div>
+//                 	</div>
+//                 	<div class="col-6">
+//                 			<!--模态框 商品详情-->
+//                 		<p id="foot_type">${obj[0].type}</p>
+//                 		<p id="foot_sweet">${obj[0].sweet}</p>
+//                 		<p id="foot_condition">${obj[0].condition1}</p>
+//                 		<p id="foot_size">${obj[0].size}</p>
+//                 	</div>
+//                 	<div class="col-6">
+//                 		<!--添加三张图片-->
+//                 		<span id="foot_pic_1">
+// 							<img id='foot_pic_11' src=/img/${obj[0].pic1} width=80px height=60px />
+// 						</span>
+//                 		<span id="foot_pic_2">
+// 							<img id='foot_pic_22' src=/img/${obj[0].pic2} width=80px height=60px />
+// 						</span>
+//                 		<span id="foot_pic_3">
+// 							<img id='foot_pic_33' src=/img/${obj[0].pic3} alt='图片已损坏' width=80px height=60px />
+// 						</span>
+//                 	</div>`;
+// 					modal_body.innerHTML=html;
+// 				foot_pic_11.onclick=function(){
+// 					foot_pic.innerHTML="<img src=/img/"+obj[0].pic1+" width=700px/>"
+// 				}
+// 				foot_pic_22.onclick=function(){
+// 					foot_pic.innerHTML="<img src=/img/"+obj[0].pic2+" width=700px/>"
+// 				}
+// 				foot_pic_33.onclick=function(){
+// 					foot_pic.innerHTML="<img src=/img/"+obj[0].pic3+" width=700px/>"
+// 				}	
+// 			}
+// 		}
+// 		xhr.open('get','/content/data?uid='+value1,true);
+// 		xhr.send();
+// 	}
+	 </script>
+	</body>
+</html>

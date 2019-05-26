@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+    /*头部背景颜色、边框、边框阴影*/
+    .top{
+    	border: 2px solid transparent;
+		border-bottom-color:#e9ded0;
+		box-shadow: 0px 2px 10px #e9ded0;
+    }
+    .top_bgcolor{
+    	background: #f8f8f8;
+    }
+    
+    .my_color1{
+		font-size: 24px;
+		font-weight: 700px;
+		color: #cd9e72;
+	}
+	#list{
+		display: flex;
+		position: relative;
+		width: 150px;
+		height: 35px;
+		border: 1px solid transparent;
+		margin: 40px auto;
+	}
+	.weixin>div{
+		position: absolute;
+		top: -100px;
+		left: -40px;
+		opacity: 0;
+		transition: 1s;
+	}
+	.weibo>div{
+		position: absolute;
+		top: -100px;
+		left:65px;opacity: 0;
+			transition: 1s;
+	}
+	.weixin:hover div{
+		opacity: 1;
+	}.weibo:hover div{
+		opacity: 1;
+	}
+	#tubiao{
+		margin-left:42% ;
+		margin-bottom: 50px;
+	}
+	#footer{
+		color: #e0d7ce;
+		background: #c9a16d;
+	}
+	/*公共样式*/
+	.my_bgcolor1{
+		background: #feedd3;
+	}
+	.my_color{
+		color: #c9a16d;
+	}
+	hr{
+		color:#fff ;
+	}
+	/*页面主体的位置*/
+	.middle{
+		border: 2px solid #c9a16d;
+	}
+	.circle{
+		width: 15px;
+		height: 15px ;
+		border: 2px solid #fff;
+		border-radius: 50%;
+		margin: 0 auto;
+		margin-top: 15px;
+	}
+	.suoyin{
+		background: #feedd3;
+		cursor: pointer;
+		color: #c9a16d;
+	}
+	.suoyin:hover{
+		border: 2px solid  #c9a16d;
+		border-bottom: 5px solid  #c9a16d;
+	}
+	.suoyin:hover .circle{
+		border: 2px solid  #c9a16d;
+	}
+	#tu1{
+		padding: 1px;
+		padding-left: 20px;	
+	}
+	#tu2{
+		padding-left:19px ;
+		padding-top: 3px;
+	}
+	#tu3{
+		padding-left:12px ;
+		padding-top: 3px;
+	}
+	#uid1,#uid2,#uid3,#uid4,#uid5,#uid6{
+		display: none;
+	}
+    </style>
+	</head>
+	<body>
+	<!--页面头部-->
+	<div class="row top top_bgcolor">
+		<div class="col-lg-5 col-sm-12 pt-3 pb-3 text-center">
+			<a href="index.html"><img src="img/logo.png" class="" alt="" /></a>
+		</div>
+		<div class="col-lg-7 col-md-12 text-center">
+			<a href="series.html"><img src="img/nav11 (2).svg" class="pt-3 pb-3 pr-2" width="150px" alt="" /></a>
+			<a href="Story.html"><img src="img/nav22.svg" class="pt-3 pb-3 pr-2" width="150px" alt="" /></a>
+			<a href="public.html"><img src="img/nav3.svg" class="pt-3 pb-3 pr-2" width="150px" alt="" /></a>
+			<a href="service.html"><img src="img/nav44.svg" class="pt-3 pb-3 pr-2" width="150px" alt="" /></a>
+		</div>
+	</div>	
+	<!--页面主体-->
+	<div class="container" id="container">
+		<div class="row  middle mt-5 my_bgcolor1">
+			<!--主体左半部分-->
+			<div class="col-lg-6 col-sm-12 pt-5">
+				<div class="text-center" >
+					<img src="img/benefit.png" alt="" />
+				</div>
+				<p class="my_color text-center h5">米旗公益</p>
+				<p class="my_color text-center h6 font-weight-bold">MAKY PUBLIC WELFARE</p>
+				<hr class="text-center " width="400px" color="#c9a16d"/>
+				<p class="my_color text-center font-weight-bold h5" id="p1">让孩子在欢乐中记住米旗蛋糕</p>
+				<hr class="text-center " width="400px" color="#c9a16d"/>
+				<p class="my_color pt-0 pl-5 pr-5 pb-5" id="p2">2015年四川省第三届青年创意设计大赛，暨天府宝岛工业设计大赛分赛——第一届亲子创意烘焙大赛于6月13-14日圆满举行。成都米旗食品有限责任公司成功与成都三幼树基学前教育有限公司首次建立合作关系。成都米旗精湛的裱花技术、美味的水果蛋糕为本次创意大赛的成功举办增添了色彩。本次活动不仅让孩子与家长有了一次特别的烘焙体验，也给每个孩子的童年留下了宝贵的记忆。</p>
+			</div>
+		<!--主体右半部分-->
+		<div class="col-lg-6 col-sm-12">
+			<div class="row">
+				<div class="col-12 text-center" id="tu1">
+					<img src="img/65f291988dc05821421c0aa47212d476.jpg" alt="" />
+				</div>
+				<div class="col-6 pb-1 text-center"  id="tu2">
+					<img src="img/60062e8356962ec4735edadb68905740.jpg" alt="" />
+				</div>
+				<div class="col-6 text-center" id="tu3">
+					<img src="img/6f722fa7d5c7975acacb75785981e05d.jpg" alt="" />
+				</div>
+			</div>
+		</div>
+		</div>
+		<!--主体索引部分-->
+		<div class="row pt-3">
+			<div class="col-lg-2 col-sm-4 suoyin text-center" id="s1">
+				<input type="text" id="uid1" value="1" />
+				<p class="circle"></p>
+				<p class="china pt-3 m-0 ">亲子</p>
+				<p class="english font-weight-bold">Parent-child</p>
+			</div>
+			<div class="col-lg-2 col-sm-4 suoyin text-center" id="s2">
+				<input type="text" id="uid2" value="2" />
+				<p class="circle"></p>
+				<p class="china  pt-3 m-0">爱心</p>
+				<p class="english font-weight-bold ">Love</p>
+			</div>
+			<div class="col-lg-2 col-sm-4 suoyin text-center" id="s3">
+				<input type="text" id="uid3" value="3" />
+				<p class="circle"></p>
+				<p class="china  pt-3 m-0 ">温柔</p>
+				<p class="english  font-weight-bold">Warm</p>
+			</div>
+			<div class="col-lg-2 col-sm-4 suoyin text-center" id="s4">
+				<input type="text" id="uid4" value="4" />
+				<p class="circle"></p>
+				<p class="china  pt-3 m-0">责任</p>
+				<p class="english  font-weight-bold">Responsibility</p>
+			</div>
+			<div class="col-lg-2 col-sm-4 suoyin text-center" id="s5">
+				<input type="text" id="uid5" value="5" />
+				<p class="circle"></p>
+				<p class="china pt-3 m-0">希望</p>
+				<p class="english  font-weight-bold">Hope</p>
+			</div>
+			<div class="col-lg-2 col-sm-4 suoyin text-center" id="s6">
+				<input type="text" id="uid6" value="6" />
+				<p class="circle"></p>
+				<p class="china pt-3 m-0">需要</p>
+				<p class="english  font-weight-bold">Need</p>
+			</div>
+		</div>
+	</div>
+	
+	<footer>
+		<hr class="mt-5"/>
+			<div class="container">
+				<!--文字-->
+				<div class="row">
+					<div class="col-9 offset-3  my_color1">享受美味，享受生活</div>
+				</div>
+				<div class="row">
+					<div class="col-8 offset-4  my_color1">Enjoy delicious life</div>
+				</div>
+				<!--微信、微博-->
+				<div id="shaoma">
+					<ul class="list-unstyled" id="list">
+						<li class="weixin">
+							<div><img src="img/AlertEWM.png" alt=""  width="100px"/></div>
+							<a href="#"><img src="img/wx.svg" class="mr-3" width="33px"/></a>
+							
+						</li>
+						<li class="weibo">
+							<div><img src="img/skype.jpg" alt=""  width="100px"/></div>
+							<a href="#"><img src="img/wb.svg" class="ml-5" width="33px"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="tubiao">
+					<img src="img/markets1.svg" width="50px" alt="" />
+					<img src="img/markets2.svg"  width="100px"  alt="" />
+					<img src="img/markets3.svg"  width="100px" alt="" />
+					<img src="img/Hbb.png" width="54px"   alt="" /> 	
+			</div>
+			<div class="row" id="footer">
+				<div class="col-12 mt-3 text-center">邮箱：kefu@maky.com.cn | 地址：中国 西安 经济技术开发区凤城三路33号 | 电话：400-022-6999</div>
+				<div class="col-12 mt-3 mb-3 text-center">Copyright © www.maky.com.cn 陕ICP备09003989号</div>
+			</div>
+	</footer>
+	<script>
+
+		// container.innerHTML=1;
+		var html='';
+		function insert(value1){
+				var xhr=new XMLHttpRequest();
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4&&xhr.status==200){
+						var result=xhr.responseText;
+						var obj=JSON.parse(result);
+						console.log(obj)
+					p1.innerHTML=obj[0].title;
+					p2.innerHTML=obj[0].record;
+					tu1.innerHTML="<img src='img/"+obj[0].pic1+"'>"
+					tu2.innerHTML="<img src='img/"+obj[0].pic2+"'>"
+					tu3.innerHTML="<img src='img/"+obj[0].pic3+"'>"
+					}
+				}
+				var url='/content/public?uid='+value1;
+				xhr.open('get',url,true);
+				xhr.send();
+		}
+	
+	s1.onclick=function(){
+		insert(uid1.value)
+	}
+	s2.onclick=function(){
+		insert(uid2.value)
+	}
+	s3.onclick=function(){
+		insert(uid3.value)
+	}
+	s4.onclick=function(){
+		insert(uid4.value)
+	}
+	s5.onclick=function(){
+		insert(uid5.value)
+	}
+	s6.onclick=function(){
+		insert(uid6.value)
+	}
+	
+
+	</script>
+	</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>米旗首页</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+   	<link rel="stylesheet" href="css/index.css" />
+   	<style type="text/css">
+   		#series1,#series2,#series3,#series4{
+   			cursor: pointer;
+   		}
+   	</style>
+	</head>
+	<body>
+		<div id="container">
+			<!--页面顶部-->
+			<div class="top row">
+				<div class="col-sm-12 col-lg-6 pt-3 pb-3  text-center"><a href="#"><img src="img/logo.png" alt="" /></a></div>
+				<div class="col-sm-12 col-lg-6 pt-3 pb-3 text-center my_top_color">
+					<img src="img/koubai.svg" width="86px" alt="" />
+					<span class="pl-4 pr-5">400-022-6999</span>
+					<a href="#" class="weishang1">
+						<img src="img/jrsc.svg" width="100px" alt="" />
+						<div class="erweima">
+							<img src="img/navposition.svg" width="100px" alt="" />
+						</div>
+				</a>
+				</div>
+			</div>
+			<!--轮播图-->
+			<div class="carousel" data-ride='carousel' id="slid">
+				 <!-- <div class="carousel-inner" >
+					<div class="carousel-item active">
+						<img src="img/122ca93d7946a595601f632dc6a4e8b0.jpg" class="active w-100" />
+					</div>
+					<div class="carousel-item">
+						<img src="img/363a73be90cab2d2f0903b1fdb6b50c2.jpg" class="w-100"/>
+					</div>
+				</div>
+				<ul class="carousel-indicators">
+					<li class="active" data-slide-to="0" data-target="#slid"></li>
+					<li data-slide-to="0" data-target="#slid"></li>
+				</ul>   -->
+				
+			</div>
+			<!--页面中部导航栏-->
+			<div class="nav row">
+				<div  id="series" class="col-lg-2 pl-3 offset-1 text-center">
+					<div id=""></div>
+					<span>Product series</span><br />
+					<p class="p1">商品系列</p>
+				</div>
+				<div id="series1" class="pl-3 col-lg-2  text-center">
+					<div id=""></div>
+					<span>Product series</span><br />
+					<p class="p1">品牌故事</p>
+				</div>
+				<div id="series2" class="pl-3 col-lg-2  text-center ">
+					<div id=""></div>
+					<span>Product series</span><br />
+					<p class="p1">米旗公益</p>
+				</div>
+				<div id="series3" class="pl-3 col-lg-2  text-center">
+					<div id=""></div>
+					<span>Product zone</span><br />
+					<p class="p1">企业专区</p>
+				</div>
+				<div id="series4" class="pl-3 col-lg-2 text-center">
+					<div id=""></div>
+					<span>Product series</span><br />
+					<p class="p1">联系我们</p>
+				</div>
+
+			</div>
+			<!--单行三张图片-->
+			<div class="row text-center">
+				<!--文字样式-->
+				<!--enjoy to enjoy life-->
+				<div class="col-12 mt-3">
+					<p>享受美味，享受生活</p>
+					<p>Enjoy to enjoy life</p>	
+					<p></p>
+				</div>
+				<!--单行两张三张图片-->
+				<div id="p_three">
+					<div id="d1" class="p1" data-toggle="modal"  data-target="#demo">
+						<input id="one" type="text" value="1"/>
+						<img src="img/2e11cd5d5c49d247031f1ba6b7a4f822.jpg" />
+						<div class="p1_1 text-left">嘟嘟熊>></div>
+					</div>
+					<div id="d2" class="p2" data-toggle="modal" data-target="#demo">
+						<input id="two" type="" name="" value="2" />
+						<img src="img/1db06df6c54216823f7623543e0133bf.jpg" alt="" />
+						<div class="p1_2  text-left">芒果小方>></div>
+					</div>
+					<div id="d3"class="p3" data-toggle="modal" data-target="#demo">
+						<input id="three" type="" name="" value="3" />
+						<img src="img/4a727ac19f5c7d22ac1e8240abfff565.jpg" alt="" />
+						<div class="p1_3 text-left">草莓洛丽塔>></div>
+					</div>
+				</div>
+			</div>
+			<!--新品上市-->
+			<div class="row text-center">
+				<div class="col-12 mt-3">
+					<p>新品上市</p>
+					<p>POPULAR ITEM</p>	
+					<p></p>
+				</div>
+			</div>
+			<!--双行两张图-->
+			<div class="pic_1 row ">
+				<div class="bac1 col-lg-4 offset-3" id="d4" data-toggle="modal" data-target="#demo"></div>
+				<input id="four" type="text" value="4"/>
+				<div class="text_1 col-lg-6 p-0">
+					<div class="text-center ">
+						<h4>提</h4>
+						<h4>拉</h4>
+						<h4>米</h4>
+						<h4>苏</h4>
+						<h4>&nbsp;|</h4>
+						<h4>new</h4>
+					</div>
+					<div>
+						<h4>提</h4>
+						<h4>拉</h4>
+						<h4>米</h4>
+						<h4>苏</h4>
+						<h4>&nbsp;|</h4>
+						<h4>new</h4>
+					</div>
+				</div>
+			</div>
+			<div class="pic_1 row">
+				<div class="bac col-lg-4 pl-0 offset-3" id="d5" data-toggle="modal" data-target="#demo"></div>
+				<input id="five" type="text" value="5"/>
+				<div class="text_1 col-lg-6 pl-0">
+					<div>
+						<h4>提</h4>
+						<h4>拉</h4>
+						<h4>米</h4>
+						<h4>苏</h4>
+						<h4>&nbsp;|</h4>
+						<h4>new</h4>
+					</div>
+					<div>
+						<h4>提1</h4>
+						<h4>拉1</h4>
+						<h4>米1</h4>
+						<h4>苏1</h4>
+						<h4>&nbsp;|</h4>
+						<h4>new</h4>
+					</div>
+				</div>
+			</div>
+			<!--品牌故事-->
+			<div class="row a1">
+				<div class="col col-12 a1">
+					<div class="">
+						<h2>品牌故事</h2>
+						<h3>MAKY BRAND STORY</h3>
+						<a href="series.html">read story</a>
+					</div>
+				</div>
+			</div>
+			<!--文字 1994年...-->
+			<div id="T1994" class="row">
+				<div class="col-10 offset-2">
+					<p></p>
+					<div>
+						<p>
+							<span>1994年</span>从古都西安走向全国各地，坚持用心烘焙, 臻选优质食材。<br />
+							从第一家到三百多家，无论是实体门店，还是官网订购。始终真诚服务，周到、便捷。
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--一行一个图-->
+			<div id="pic1">
+				<div class="pic1_left">
+					<img class="img1" src="img/SmallImg.jpg"/>
+				</div>
+				<div class="pic1_right">
+					<div class="pic1_1">
+						<div>
+							<p>品牌介绍</p>
+							<p></p>
+							<p>用心烘烤，让生活更美味</p>
+							<h6>read story>></h6>
+							<div class="sanjiao1"></div>
+						</div>
+						<div id="img2"><img class="img2" src="img/course1.jpg" alt="" /></div>
+					</div>
+					<div class="pic1_2">
+						<div><img class="img3"src="img/course2.jpg" width="" alt="" /></div>
+						<div>
+							<p>品牌历史</p>
+							<p></p>
+							<p>创造无限，品味生活</p>
+							<h6>read story>></h6>
+							<div class="sanjiao2"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--footer 底部-->
+			<hr class="mt-5"/>
+			<div class="container">
+				<!--文字-->
+				<div class="row">
+					<div class="col-9 offset-3  my_color">享受美味，享受生活</div>
+				</div>
+				<div class="row">
+					<div class="col-8 offset-4  my_color">Enjoy delicious life</div>
+				</div>
+				<!--微信、微博-->
+				<div id="shaoma">
+					<ul class="list-unstyled" id="list">
+						<li class="weixin">
+							<div><img src="img/AlertEWM.png" alt=""  width="100px"/></div>
+							<a href="#"><img src="img/wx.svg" class="mr-3" width="33px"/></a>
+							
+						</li>
+						<li class="weibo">
+							<div><img src="img/skype.jpg" alt=""  width="100px"/></div>
+							<a href="#"><img src="img/wb.svg" class="ml-5" width="33px"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="tubiao">
+					<img src="img/markets1.svg" width="50px" alt="" />
+					<img src="img/markets2.svg"  width="100px"  alt="" />
+					<img src="img/markets3.svg"  width="100px" alt="" />
+					<img src="img/Hbb.png" width="54px"   alt="" /> 	
+			</div>
+			<div class="row" id="footer">
+				<div class="col-10 pt-3 text-center">邮箱：kefu@maky.com.cn | 地址：中国 西安 经济技术开发区凤城三路33号 | 电话：400-022-6999</div>
+				<div class="col-10 pt-3 pb-3 text-center">Copyright © www.maky.com.cn 陕ICP备09003989号</div>
+			</div>
+		</div>	
+		<!--<button data-toggle="modal" data-target="#demo" class="btn btn-danger">打开模态框</button>-->
+		<!--第一层模态框-->
+		<div id="demo" class="modal">
+        <!-- 第二层-->
+        <div class="modal-dialog"><!--主要负责响应式布局-->
+        <!-- 第三次-->
+            <div class="modal-content">
+            	<!--关闭按钮-->
+                <div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+                
+                <div class="modal-body row" id="modal_body">
+                	<!--图片-->
+                	<!-- <div class="col-9" id="foot_pic">
+                	</div>
+                	<div class="col-3 p-0 mt-5">
+                		<div id="body_name"> -->
+                			<!--模态框 商品名字-->
+                			<!-- <h3 id="foot_name"></h3>
+                			<i id="text-right">Enjoy to enjoy life</i>
+                		</div> -->
+                			<!--模态框 商品介绍-->
+                		<!-- <div id="foot_tur"></div>
+                		<div id="erweima2"> 
+                			<img src="img/1526715285.png" width="150px"/>
+                			<p>扫二维码，立即购买</p>
+                		</div>
+                	</div> -->
+                	<!-- <div class="col-6"> -->
+                			<!--模态框 商品详情-->
+                		<!-- <p id="foot_type"></p>
+                		<p id="foot_sweet"></p>
+                		<p id="foot_condition"></p>
+                		<p id="foot_size"></p>
+                	</div> -->
+                	<!-- <div class="col-6"> -->
+                		<!--添加三张图片-->
+                		<!-- <span id="foot_pic_1"></span>
+                		<span id="foot_pic_2"></span>
+                		<span id="foot_pic_3"></span>
+                	</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&xhr.status==200){
+				var result=xhr.responseText;
+				var objs=JSON.parse(result);
+				console.log(objs);
+				var html='';
+				for(var obj of objs){
+					html+=`<div id="d${obj.id}" class="p${obj.id}" data-toggle="modal"  data-target="#demo">
+						<input id="${obj.nid}" type="text" value="${obj.id}"/>
+						<img src="${obj.img_url}" />
+						<div class="p1_${obj.id} text-left">${obj.tname}>></div>
+					</div>`
+				}
+				p_three.innerHTML=html;
+				d1.onclick=function(){
+					insert(one.value);
+				}
+				d2.onclick=function(){
+					insert(two.value);
+				}
+				d3.onclick=function(){
+					insert(three.value);
+				}
+				d4.onclick=function(){
+					insert(four.value);
+				}
+				d5.onclick=function(){
+					insert(five.value);
+				}
+			}
+		}
+		xhr.open('get','/content/index_three',true);
+		xhr.send();
+
+		series.onclick=function(){
+			window.location.href='series.html'
+		}
+		series1.onclick=function(){
+			window.location.href='Story.html'
+		}
+		series2.onclick=function(){
+			window.location.href='public.html'
+		}
+		series3.onclick=function(){
+			window.location.href='service.html'
+		}
+//通过点击事件，调用insert函数，将数据渲染到页面当中
+	
+	//创建一个公共函数
+	function insert(value1){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&xhr.status==200){
+				var result=xhr.responseText;
+				var obj=JSON.parse(result);
+				console.log(obj)
+				var html='';
+				html+=`<div class="col-9" id="foot_pic">
+							<img src=/img/${obj[0].pic1} width=700px/>
+                		</div>
+                	<div class="col-3 p-0 mt-5">
+                		<div id="body_name">
+                			<!--模态框 商品名字-->
+                			<h3 id="foot_name">${obj[0].uname}</h3>
+                			<i id="text-right">Enjoy to enjoy life</i>
+                		</div>
+                			<!--模态框 商品介绍-->
+                		<div id="foot_tur">${obj[0].introduce}</div>
+                		<div id="erweima2"> 
+                			<img src="img/1526715285.png" width="150px"/>
+                			<p>扫二维码，立即购买</p>
+                		</div>
+                	</div>
+                	<div class="col-6">
+                			<!--模态框 商品详情-->
+                		<p id="foot_type">${obj[0].type}</p>
+                		<p id="foot_sweet">${obj[0].sweet}</p>
+                		<p id="foot_condition">${obj[0].condition1}</p>
+                		<p id="foot_size">${obj[0].size}</p>
+                	</div>
+                	<div class="col-6">
+                		<!--添加三张图片-->
+                		<span id="foot_pic_1">
+							<img id='foot_pic_11' src=/img/${obj[0].pic1} width=80px height=60px />
+						</span>
+                		<span id="foot_pic_2">
+							<img id='foot_pic_22' src=/img/${obj[0].pic2} width=80px height=60px />
+						</span>
+                		<span id="foot_pic_3">
+							<img id='foot_pic_33' src=/img/${obj[0].pic3} alt='图片已损坏' width=80px height=60px />
+						</span>
+                	</div>`;
+					modal_body.innerHTML=html;
+				foot_pic_11.onclick=function(){
+					foot_pic.innerHTML="<img src=/img/"+obj[0].pic1+" width=700px/>"
+				}
+				foot_pic_22.onclick=function(){
+					foot_pic.innerHTML="<img src=/img/"+obj[0].pic2+" width=700px/>"
+				}
+				foot_pic_33.onclick=function(){
+					foot_pic.innerHTML="<img src=/img/"+obj[0].pic3+" width=700px/>"
+				}	
+			}
+		}
+		xhr.open('get','/content/data?uid='+value1,true);
+		xhr.send();
+	}
+	window.onload=function(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&xhr.status==200){
+				var result=xhr.responseText;
+				var obj=JSON.parse(result);
+				console.log(obj)
+				var html='';
+				html+="<div class='carousel-inner'>";
+				for(var objs of obj){
+					if(objs.id==1){
+						html+=`<div class='carousel-item active'><img src='${objs.pic}' class='active w-100'/></div>`	
+					}else{
+						html+=`<div class='carousel-item'><img src='${objs.pic}' class='active w-100'/></div>`	
+					}
+				}
+				html+=`<ul class="carousel-indicators">
+					<li class="" data-slide-to="0" data-target="#slid" id="d111"></li>
+					<li data-slide-to= "1" data-target="#slid" id="d222"></li>
+				</ul>`;
+				slid.innerHTML=html;
+			}
+		}
+		xhr.open('get','/content/index_top',true);
+		xhr.send();
+	}
+		
+	
+</script>
+</body>
+</html>
